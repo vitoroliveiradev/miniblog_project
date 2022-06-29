@@ -24,6 +24,8 @@ import { Register } from "./pages/Register/Register";
 // Components
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { CreatePost } from "./pages/CreatePost/CreatePost";
+import { Dashboard } from "./pages/Dashboard/Dashboard";
 
 export const App = () => {
   const [user, setUser] = useState(undefined);
@@ -63,6 +65,14 @@ export const App = () => {
               <Route 
                 path="/register"
                 element={<Register />}
+              />
+              <Route 
+                path="/posts/create"
+                element={<CreatePost />}
+              />
+              <Route 
+                path="/dashboard"
+                element={<Dashboard />}
               />
             </Routes>
           </div>
