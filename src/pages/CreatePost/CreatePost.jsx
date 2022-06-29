@@ -74,7 +74,7 @@ export const CreatePost = () => {
         )}
         {loading && (
           <button className="btn" disabled>
-            Aguarde...
+          Aguarde...
           </button>
         )}
         {error && <p className="error">{error}</p>} */}
