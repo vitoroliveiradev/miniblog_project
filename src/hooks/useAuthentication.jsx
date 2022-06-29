@@ -62,6 +62,12 @@ export const useAuthentication = () => {
     }
   }
 
+  // Função de Logout.
+  const logout = () => {
+    checkIfIsCancelled();
+    signOut(auth);
+  }
+
   // Limpando a memória;
   useEffect(() => {
     return () => setCancelled(true);
@@ -71,6 +77,7 @@ export const useAuthentication = () => {
     auth,
     createUser,
     error,
-    loading
+    loading,
+    logout
   }
 }

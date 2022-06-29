@@ -111,3 +111,7 @@ button[disabled] {
   padding: 5px;
   border-radius: 5px;
 }
+
+.logout:hover {
+  color: #FF1C08;
+}

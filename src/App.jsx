@@ -26,6 +26,7 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { CreatePost } from "./pages/CreatePost/CreatePost";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
+import { NotFound } from "./pages/NotFound/NotFound";
 
 export const App = () => {
   const [user, setUser] = useState(undefined);
@@ -73,6 +74,10 @@ export const App = () => {
               <Route 
                 path="/dashboard"
                 element={user ? <Dashboard /> : <Navigate to="/login" />}
+              />
+              <Route 
+                path="*"
+                element={<NotFound />}
               />
             </Routes>
           </div>
