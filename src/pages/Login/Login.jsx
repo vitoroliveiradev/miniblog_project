@@ -8,7 +8,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const { error: authError, loading } = useAuthentication(); 
+  const { login, error: authError, loading } = useAuthentication(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +19,10 @@ export const Login = () => {
       email,
       password
     }
+
+    const res = await login(user);
+
+    console.log(res);
 
   }
   // Vai ser se o authError mudou.
