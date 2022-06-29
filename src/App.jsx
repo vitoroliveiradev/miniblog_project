@@ -60,19 +60,19 @@ export const App = () => {
               />
               <Route 
                 path="/login"
-                element={<Login />}
+                element={!user ? <Login /> : <Navigate to="/"/> }
               />
               <Route 
                 path="/register"
-                element={<Register />}
+                element={!user ? <Register /> : <Navigate to="/" />}
               />
               <Route 
                 path="/posts/create"
-                element={<CreatePost />}
+                element={user ? <CreatePost /> : <Navigate to="/login" />}
               />
               <Route 
                 path="/dashboard"
-                element={<Dashboard />}
+                element={user ? <Dashboard /> : <Navigate to="/login" />}
               />
             </Routes>
           </div>
