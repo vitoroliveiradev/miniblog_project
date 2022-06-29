@@ -10,11 +10,14 @@ import {
 // Pages
 import { Home } from "./pages/Home/Home";
 import { About } from "./pages/About/About";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 export const App = () => {
   return (
     <div>
       <BrowserRouter>
+        <Navbar />
         <div className="container">
           <Routes>
             <Route 
@@ -27,6 +30,7 @@ export const App = () => {
             />
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   )
