@@ -30,11 +30,15 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
         
         let q;
 
-        // Busca
         // dashboard
-
+        
         // Pegando os dados
-        q = await query(collectionRef, orderBy("createdAt", "desc"));
+        // Fazendo a Busca.
+        if(search) {
+          q = await query(collectionRef, where("tags", "array-contains", search), orderBy("createdAt", "desc"));
+        } else {
+          q = await query(collectionRef, orderBy("createdAt", "desc"));
+        }
 
         // Mapear dados, se alterar um dado, ele vai marcar e ver que tem diferença entre os dados. Vai trazer o dado atualizado. ID vem separado dos dados.
         await onSnapshot(q, (querySnapshot) => {

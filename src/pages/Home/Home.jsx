@@ -13,9 +13,15 @@ import { PostDetail } from "../../components/PostDetail";
 export const Home = () => {
   const [query, setQuery] = useState("");
   const { documents: posts, loading } = useFetchDocuments("posts"); 
+  const navigate = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    // Fazendo a busca
+    if(query) {
+      return navigate(`/search?q=${query}`)
+    }
   }
 
   return (
