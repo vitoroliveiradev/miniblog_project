@@ -22,7 +22,7 @@ export const Dashboard = () => {
   }
 
   return (
-    <div>
+    <div className={styles.dashboard}>
       <h2>Dashboard</h2>
       <p>Gerencie os seus posts</p>
       {posts && posts.length === 0 ? (
@@ -34,12 +34,12 @@ export const Dashboard = () => {
         </div>
       ) : (
         <>
-          <div>
+          <div className={styles.post_header}>
             <span>Título</span>
             <span>Ações</span>
           </div>
           {posts && posts.map(post => (
-            <div key={post.id}>
+            <div key={post.id} className={styles.post_row}>
               <p>{post.title}</p>
               <div>
                 <Link to={`/posts/${post.id}`} className="btn btn-outline">
