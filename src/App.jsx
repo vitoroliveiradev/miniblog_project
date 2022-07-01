@@ -20,14 +20,18 @@ import { Home } from "./pages/Home/Home";
 import { About } from "./pages/About/About";
 import { Login } from "./pages/Login/Login";
 import { Register } from "./pages/Register/Register";
-
-// Components
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
 import { CreatePost } from "./pages/CreatePost/CreatePost";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { Search } from "./pages/Search/Search";
+import { Post } from "./pages/Post/Post";
+
+// Components
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
+
+
+
 
 export const App = () => {
   const [user, setUser] = useState(undefined);
@@ -63,6 +67,10 @@ export const App = () => {
               <Route 
                 path="/search"
                 element={<Search />}
+              />
+              <Route 
+                path="/posts/:id"
+                element={<Post />}
               />
               <Route 
                 path="/login"
