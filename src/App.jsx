@@ -29,6 +29,7 @@ import { Post } from "./pages/Post/Post";
 // Components
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { EditPost } from "./pages/EditPost/EditPost";
 
 
 
@@ -83,6 +84,10 @@ export const App = () => {
               <Route 
                 path="/posts/create"
                 element={user ? <CreatePost /> : <Navigate to="/login" />}
+              />
+              <Route 
+                path="/posts/edit/:id"
+                element={user ? <EditPost /> : <Navigate to="/login" />}
               />
               <Route 
                 path="/dashboard"
